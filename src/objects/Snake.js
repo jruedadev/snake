@@ -19,7 +19,7 @@ class Snake {
             }
         }
 
-        setInterval(()=>{this.grow()},1000);
+        setInterval(() => { this.grow() }, 1000);
     }
 
     changeDirection(dir) {
@@ -30,7 +30,18 @@ class Snake {
 
     grow() {
         const obj = this.body[this.size - 1];
-        const newObj = this.scene.physics.add.image(obj.x + this.width, obj.y + this.height, 'body').setOrigin(0);
+        let x = this.width+obj.x; let y = this.height;
+        /* 
+        if (this.dir === 'left' || this.dir === 'right') {
+            x = obj.x + this.width;
+            y = obj.y
+        }
+        else{
+            x = obj.x;
+            y = obj.y + this.height;
+        }
+        */
+        const newObj = this.scene.physics.add.image(x, y, 'body').setOrigin(0);
         this.scene.physics.add.collider(this.body[0], newObj, () => this.collision('body'));
         this.body.push(newObj);
         this.size += 1;

@@ -13,7 +13,6 @@ body {
 }
 
 #game canvas {
-    width: 99%;
     max-width: 1024px;
     max-height: 768px;
 }

@@ -1,4 +1,5 @@
 import Snake from '../objects/Snake.js';
+import Food from '../objects/Food.js';
 
 class Play extends Phaser.Scene {
     constructor() {
@@ -8,6 +9,7 @@ class Play extends Phaser.Scene {
     preload(){
         console.log('Started Play Scene');
         this.snake = new Snake(this);
+        this.food = new Food(this);
     }
 
     create(){
